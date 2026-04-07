@@ -58,15 +58,18 @@ Follow these 4 steps to get everything connected.
 2. Click **New API key** and give it a descriptive name (e.g., "Gemini CLI").
 3. **Copy the key** (you will need it for the final step).
 
-### Step 3: Connect to Gemini CLI
+### Step 3: Connect to Gemini CLI (The Only Setup You Need)
 
-Now we tell Gemini CLI where to find the built server and securely provide it with your API key.
+Now we tell Gemini CLI where to find the built server and securely provide it with your API key. You do this by editing the Gemini CLI settings file.
 
-1. Open your Gemini CLI settings file. You can usually find it at:
+1. **Locate your Settings File:**
+   Open your file explorer or terminal and find the `.gemini` folder in your user's home directory:
    - **Windows:** `%USERPROFILE%\.gemini\settings.json` (e.g., `C:\Users\YourName\.gemini\settings.json`)
    - **Mac/Linux:** `~/.gemini/settings.json`
+   *(Note: If the `.gemini` folder or `settings.json` file does not exist yet, simply create them).*
 
-2. Add the `mcp` configuration block to the file so it looks like this:
+2. **Add the Configuration:**
+   Open `settings.json` in any text editor (like VS Code, Notepad, or TextEdit) and paste the following `mcp` block. If your file already has content, just add the `"mcp"` section inside the main `{}` brackets:
 
 ```json
 {
