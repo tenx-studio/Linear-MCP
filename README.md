@@ -101,13 +101,18 @@ Try asking Gemini CLI things like:
 
 ## 🤖 Auto-Connection Magic (How it Works)
 
-You might be wondering: *"Do I need to run `npm start` every time I want to use this?"*
+You might be wondering: *"Do I need to run `npm start` every time I want to use this? Do I need to manually set up a server connection?"*
 
-**No! That is the magic of MCP.** 
+**No! You do not have to do anything extra.** 
 
-Because you added the configuration to your `settings.json`, Gemini CLI acts as the host. Every time you open Gemini CLI, it will **automatically** start this Linear MCP server in the background, securely pass it your API key, and establish the connection. When you close Gemini CLI, the server shuts down automatically. 
+Adding the configuration block in **Step 3** is the *only* setup required. Here is exactly what happens under the hood:
 
-You just give it the key once, and the custom MCP does all its things to auto-connect in the background!
+1. **Zero-Touch Startup:** Because you added the configuration to your `settings.json`, Gemini CLI natively acts as the host. 
+2. **Background Execution:** Every time you start a new Gemini CLI chat, it automatically spins up this Linear MCP server in a hidden background process.
+3. **Secure Handshake:** Gemini CLI reads the `"LINEAR_API_KEY"` from your settings and securely injects it directly into the server.
+4. **Clean Shutdown:** When you close Gemini CLI, the background server is automatically terminated.
+
+You just configure it once in your settings, and the Model Context Protocol handles the entire lifecycle for you automatically!
 
 ---
 
